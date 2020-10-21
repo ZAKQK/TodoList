@@ -1,0 +1,47 @@
+<ion-content [fullscreen]="true">
+
+  <div id="top-div">
+    <h1>Todo List</h1>
+  </div>
+
+  <div id="bottom-div">
+
+    <ion-list *ngFor="let item of toDoList">
+
+      <ion-item-sliding>
+        <ion-item-options side="start">
+          <ion-item-option (click)="favorite(item)">Edit</ion-item-option>
+          <ion-item-option color="danger" (click)="share(item)">Share</ion-item-option>
+        </ion-item-options>
+
+        <ion-item>
+          <ion-label>
+            <h2>{{ item.name }}</h2>
+            <p>{{ item.time }}</p>
+          </ion-label>
+          <ion-icon *ngIf="item.priority === 'high'" color="danger" name="ellipse"></ion-icon>
+          <ion-icon *ngIf="item.priority === 'medium'" color="warning" name="ellipse"></ion-icon>
+          <ion-icon *ngIf="item.priority === 'low'" color="success" name="ellipse"></ion-icon>
+        </ion-item>
+
+        <ion-item-options side="end">
+          <ion-item-option (click)="unread(item)">Delete</ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+      <!-- <ion-item>
+      <ion-label>{{ item.name }}</ion-label>
+    </ion-item> -->
+
+    </ion-list>
+
+  </div>
+
+
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="presentAddTodoModal()">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

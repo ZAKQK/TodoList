@@ -1,0 +1,7 @@
+{
+  "name": "FireBasePro",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

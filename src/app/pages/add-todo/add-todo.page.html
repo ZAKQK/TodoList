@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Todo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label position="floating">Todo</ion-label>
+    <ion-input [(ngModel)]="toDoObj.name" placeholder="what would you like to add?" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Time</ion-label>
+    <ion-input [(ngModel)]="toDoObj.time" placeholder="what time?" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Priority</ion-label>
+    <ion-select [(ngModel)]="toDoObj.priority" placeholder="Select One">
+      <ion-select-option value="low">Low</ion-select-option>
+      <ion-select-option value="medium">Medium</ion-select-option>
+      <ion-select-option value="high">High</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button (click)="addTodo()">Add</ion-button>
+
+
+</ion-content>
